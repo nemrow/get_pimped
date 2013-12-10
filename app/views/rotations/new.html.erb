@@ -1,0 +1,6 @@
+<h1>New Rotation for <%= @school.name %></h1>
+
+<%= form_for @rotation, :url => school_rotations_path do |f| %>
+  <%= f.text_field :name, :placeholder => 'Enter Rotation Name' %>
+  <%= f.submit %>
+<% end %>

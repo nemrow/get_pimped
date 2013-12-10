@@ -1,0 +1,7 @@
+<h1>Rotations for <%= @school.name %></h1>
+
+<% @rotations.each do |rotation| %>
+  <p><%= link_to rotation.name, rotation_teams_path(rotation) %></p>
+<% end %>
+
+<%= link_to "add new rotation", new_school_rotation_path(@school) %>

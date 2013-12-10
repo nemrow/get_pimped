@@ -1,0 +1,7 @@
+<h1>Doctors for <%= @team.name %></h1>
+
+<% @doctors.each do |doctor| %>
+  <p><%= link_to doctor.name, doctor_questions_path(doctor) %></p>
+<% end %>
+
+<%= link_to "add new doctor", new_team_doctor_path(@team) %>

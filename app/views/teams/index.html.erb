@@ -1,0 +1,7 @@
+<h1>Teams for <%= @rotation.name %></h1>
+
+<% @teams.each do |team| %>
+  <p><%= link_to team.name, team_doctors_path(team) %></p>
+<% end %>
+
+<%= link_to "add new team", new_rotation_team_path(@rotation) %>
