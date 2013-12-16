@@ -1,7 +1,9 @@
 <h1>Questions for <%= @doctor.name %></h1>
 
 <% @questions.each do |question| %>
-  <p><%= link_to question.name, doctor_questions_path(question) %></p>
+  <p>Question: <%= question.content %></p>
+  <p>Answer: <%= question.answers.first.content %></p>
+  <hr>
 <% end %>
 
 <%= link_to "add new question", new_doctor_question_path(@doctor) %>

@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 20131204031136) do
   create_table "answers", :force => true do |t|
     t.text     "content"
     t.integer  "question_id"
+    t.string   "ip_address"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -23,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20131204031136) do
   create_table "doctors", :force => true do |t|
     t.string   "name"
     t.integer  "team_id"
+    t.string   "ip_address"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -30,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20131204031136) do
   create_table "questions", :force => true do |t|
     t.text     "content"
     t.integer  "doctor_id"
+    t.string   "ip_address"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -37,12 +40,14 @@ ActiveRecord::Schema.define(:version => 20131204031136) do
   create_table "rotations", :force => true do |t|
     t.string   "name"
     t.integer  "school_id"
+    t.string   "ip_address"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "schools", :force => true do |t|
     t.string   "name"
+    t.string   "ip_address"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -50,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20131204031136) do
   create_table "teams", :force => true do |t|
     t.string   "name"
     t.integer  "rotation_id"
+    t.string   "ip_address"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

@@ -1,7 +1,11 @@
 <h1>Doctors for <%= @team.name %></h1>
 
 <% @doctors.each do |doctor| %>
-  <p><%= link_to doctor.name, doctor_questions_path(doctor) %></p>
+  <p><%= link_to doctor.name, doctor_questions_path(doctor) %>
+  <% if doctor.ip_address == request.remote_ip %>
+   - <%= link_to "X", team_doctor_path(@team, doctor), :method => :delete %>
+  <% end %>
+ </p>
 <% end %>
 
 <%= link_to "add new doctor", new_team_doctor_path(@team) %>

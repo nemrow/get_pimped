@@ -3,6 +3,7 @@ class CreateRotations < ActiveRecord::Migration
     create_table :rotations do |t|
       t.string :name
       t.integer :school_id
+      t.string :ip_address
 
       t.timestamps
     end

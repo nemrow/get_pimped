@@ -1,2 +1,9 @@
-<h1>Qestions#new</h1>
-<p>Find me in app/views/qestions/new.html.erb</p>
+<h1>New Question for <%= @doctor.name %></h1>
+<%= form_for @question, :url => doctor_questions_path(@doctor) do |f| %>
+  <%= f.text_area :content, :placeholder => 'Enter Question' %>
+  <%= fields_for :answer do |answer_fields| %>
+    <%= answer_fields.text_area :content, :placeholder => "Enter Answer" %>
+  <% end %>
+  <%= f.hidden_field :ip_address, :value => request.remote_ip %>
+  <%= f.submit %>
+<% end %>
